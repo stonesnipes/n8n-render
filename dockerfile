@@ -1,4 +1,4 @@
-FROM n8nio/n8n:1.64.3
+FROM n8nio/n8n:2.7.0
 
 # Variáveis de ambiente integradas para evitar bloqueios
 ENV N8N_PORT=5678
