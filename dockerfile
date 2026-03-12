@@ -1,4 +1,4 @@
-FROM n8nio/n8n:2.11.3
+FROM node:16-alpine
 
 # Variáveis de ambiente integradas para evitar bloqueios
 ENV N8N_PORT=5678
