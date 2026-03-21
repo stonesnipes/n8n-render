@@ -1,4 +1,4 @@
-FROM n8nio/n8n:1.123.16
+FROM n8nio/latest
 
 ENV N8N_PORT=5678
 
