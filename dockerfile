@@ -1,17 +1,13 @@
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:1.123.16
 
 USER root
 
-# Instala FFmpeg (compatível com Debian)
-RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+# Instala FFmpeg corretamente
+RUN apt-get update && apt-get install -y ffmpeg
 
 USER node
 
-# Configs essenciais
-ENV N8N_PORT=5678
 ENV N8N_BLOCK_COMMANDS_NODE=false
-ENV N8N_NODES_EXCLUDE=[]
-ENV N8N_RUNNERS_ENABLED=true
 
 EXPOSE 5678
 
