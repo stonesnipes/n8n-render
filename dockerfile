@@ -1,4 +1,4 @@
-FROM n8n.io/n8nio/n8n:1.81.0
+FROM n8n.io/n8nio/n8n:2.12.3
 
 ENV N8N_PORT=5678
 
