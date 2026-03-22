@@ -2,11 +2,10 @@ FROM n8nio/n8n:latest
 
 USER root
 
-# Instala o FFmpeg garantindo que o repositório esteja atualizado
-RUN apk update && apk add --no-cache ffmpeg
+# Atualiza a lista de pacotes e instala o FFmpeg (usando apt-get para Debian)
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
-# Desbloqueia o nó de comando para a versão nova
+# Desbloqueia o nó de comando (Execute Command)
 ENV N8N_BLOCK_COMMANDS_NODE=false
 
-# Retorna para o usuário padrão do n8n por segurança
 USER node
