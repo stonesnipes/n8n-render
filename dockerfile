@@ -1,11 +1,11 @@
-FROM n8nio/n8n:latest
+n8nio/n8n:latest-alpine
 
 USER root
 
-# Atualiza a lista de pacotes e instala o FFmpeg (usando apt-get para Debian)
-RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+# Instala o FFmpeg de forma otimizada para Alpine
+RUN apk add --no-cache ffmpeg
 
-# Desbloqueia o nó de comando (Execute Command)
+# Variável para liberar o nó de comando
 ENV N8N_BLOCK_COMMANDS_NODE=false
 
 USER node
